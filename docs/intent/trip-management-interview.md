@@ -1,0 +1,8 @@
+# Trip management — statement of intent
+
+- **Outcome:** One person can create, view, edit, archive, unarchive, and delete their own trips. Each trip has a name, destination, start date, end date, and an owner. Valid dates produce one empty day per date, including both ends (Day 1 – 14 Oct).
+- **User:** A single owner managing only their own trips. There are no accounts yet, so the owner is a placeholder user id, swapped for the signed-in user when accounts exist.
+- **Why now:** The real product is a shared group trip, with collaboration in Phase 2. This change is the trip record that later sharing and daily plans will sit on.
+- **Success:** A new trip appears on the main dashboard. Edits are saved and shown. Changing dates rebuilds the empty day list. The end date cannot be before the start date. Archive hides the trip from the main dashboard and keeps its days; an Archived view can open it, and unarchive brings it back intact. Delete asks for confirmation, then removes the trip and its days.
+- **Constraint:** Store an owner on the trip, and don’t add sharing, invites, or roles. The owner is set automatically, not chosen on the form.
+- **Out of scope:** Sharing, invites, roles, accounts, and anything on a day (activities, places, notes). Cover images too: no upload, storage, default image, or image field on the trip. Preserving a plan when dates change belongs to Calendar & Schedule Changes (07) and Daily Itinerary (02). The proposal should note both the date-rebuild risk (once a day holds a plan, a rebuild must not silently delete it) and that cover images were left out on purpose.
